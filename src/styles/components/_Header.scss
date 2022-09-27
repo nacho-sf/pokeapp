@@ -2,5 +2,21 @@
 @import '../utils/mixins.scss';
 
 .header{
-    
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: white;
+    border-bottom: solid 2px rgb(150, 150, 150);
+
+    &>input{
+        margin: 15px;
+    }
+
+    &>button{
+        height: 22px;
+    }
 }

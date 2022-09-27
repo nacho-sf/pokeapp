@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 class Card extends Component {
   render() {
-    return <section>
+    return <section className={"card"}>
       Card
     </section>;
   }

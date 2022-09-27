@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 class ListaPokemon extends Component {
   render() {
-    return <section>
+    return <section className={"lista-pokemon"}>
       ListaPokemon
     </section>;
   }

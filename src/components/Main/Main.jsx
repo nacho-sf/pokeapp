@@ -5,7 +5,7 @@ import Card from './Card';
 
 class Main extends Component {
   render() {
-    return <main>
+    return <main className={"main"}>
       <Card />
       <ListaPokemon />
     </main>;
