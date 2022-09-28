@@ -20,6 +20,7 @@ const ListaPokemon = () => {
     e.preventDefault();
     const pokeName = e.target.pokeName.value;
     setInput(pokeName);
+    e.target.reset();
   } 
 
   return (
