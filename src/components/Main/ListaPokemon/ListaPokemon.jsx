@@ -7,19 +7,28 @@ const ListaPokemon = () => {
 
   const [input, setInput] = useState("");
 
+  
+
   useEffect(() =>{
     const getPokemon = async () =>{
-      const resp = await fetch(`https://pokeapi.co/api/v2/pokemon/${"charizard"}`);
+      if(input){
+      const resp = await fetch(`https://pokeapi.co/api/v2/pokemon/${input}`);
       const data = await resp.json();
       setPokemon(data);
+      }else{
+        const resp = await fetch(`https://pokeapi.co/api/v2/pokemon/pikachu`);
+        const data = await resp.json();
+        setPokemon(data);
+      }
     }
     getPokemon();
-  }, []);
+  }, [input]);
+  
   
   const addPokemon = (e) => {
     e.preventDefault();
-    const pokeName = e.target.pokeName.value;
-    setInput(pokeName);
+    const input = e.target.pokeName.value;
+    setInput(input);
     e.target.reset();
   } 
 
@@ -28,9 +37,10 @@ const ListaPokemon = () => {
       <legend>List</legend>
       <form onSubmit={addPokemon}>
         <input name="pokeName" placeholder={"Introduce pokemon..."} />
+        
         <button type="submit" >Enviar</button>
       </form>
-      <Card />
+      {pokemon!=={}?<Card value={pokemon}/>:""}
     </fieldset>
     );
 }
