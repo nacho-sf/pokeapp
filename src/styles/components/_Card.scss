@@ -1,12 +1,135 @@
 @import '../utils/variables.scss';
 @import '../utils/mixins.scss';
 
-.card{
+
+.card-comp{
+    border: solid 2px rgb(0, 0, 0);
+    background-color: rgb(231, 231, 58);
+    height: 158px;
+    width: 150px;
+    margin: 15px;
+    padding: 5px;
+    border-radius: 10px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: top;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 10px 10px 15px 0px #000000;
+    transition: transform 0.5s, width 0.5s, height 0.5s, box-shadow 0.5s;
+
+    &>h1{
+        margin: 0 0 5px 0;
+    }
     
+
+    .image{
+        background-image: url("../../../public/fondo-selva.jpg");
+        background-size: cover;
+        border: solid 1.5px black;
+        border-radius: 5px;
+        &>img{
+            
+            height: 100px;
+            width: 130px;
+            padding: 10px 0 5px 0;
+        }
+
+    }
+
+    .info{
+        display: none;
+        flex-flow: column nowrap;
+        transition: display 0.5s;
+    }
+
+    .exp{
+        margin: 3px 0 3px 0;
+
+        &>p{
+            margin: 0 0 0 0;
+            font-size: 0.7rem;
+            text-align: center;
+        }
+    }
+
+    .type{
+        margin: 3px 0 3px 0;
+
+        &>p{
+            margin: 0 0 0 0;
+            font-size: 0.7rem;
+            text-align: center;
+        }
+    }
+
+    .abilities{
+        margin: 3px 0 3px 0;
+
+        &>p{
+            margin: 0 0 0 0;
+            font-size: 0.7rem;
+            text-align: center;
+        }
+    }
+
+    
+    .info:hover{
+        display:flex;
+        flex-flow:column nowrap;
+        transition: display 0.5s;
+    }
+    
+
 }
 
-.card-box{
-    border: dotted 2px rgb(50, 50, 50);
-    width: 40%;
+
+.card-comp:hover{
+    transform: rotate(360deg);
     height: auto;
+    width: 160px;
+    box-shadow: 20px 20px 55px 10px #000000;
+
+    .info{
+        margin-top: 5px;
+        display:flex;
+        flex-flow: column nowrap;
+    }
+
+    .info2{
+        display:flex;
+        flex-flow: row nowrap;
+        justify-content: space-evenly;
+        
+    }
+
+    .exp{
+        margin: 3px 0 3px 0;
+
+        &>p{
+            margin: 0 0 0 0;
+            font-size: 0.7rem;
+            text-align: center;
+        }
+    }
+
+    .type{
+        margin: 3px 0 3px 0;
+        &>p{
+            margin: 0 0 0 0;
+            font-size: 0.7rem;
+            text-align: center;
+        }
+    }
+
+    .abilities{
+        margin: 3px 0 3px 0;
+
+        &>p{
+            margin: 0 0 0 0;
+            font-size: 0.7rem;
+            text-align: center;
+        }
+    }
+
 }

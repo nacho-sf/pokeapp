@@ -1,6 +1,25 @@
 @import '../utils/variables.scss';
 @import '../utils/mixins.scss';
 
-.lista-pokemon{
-    
+.lista-comp{
+    background-color: rgb(196, 242, 182)
+}
+
+.lista-input{
+    background-color: rgb(23, 63, 50);
+
+    &>form{
+        &>input{
+            margin: 10px;
+        }
+    }
+
+}
+
+.lista-cards{
+    background-color: rgb(196, 242, 182);
+    display:flex;
+    flex-flow: row wrap;
+    margin: 15px 0 0 0;
+    padding: 0 0 70px 0;
 }

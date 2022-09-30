@@ -3,45 +3,39 @@ import Card from '../ListaPokemon/Card';
 
 const ListaPokemon = () => {
 
-  const [pokemon, setPokemon] = useState({});
-
+  const [pokemon, setPokemon] = useState([]);
   const [input, setInput] = useState("");
-
-  
 
   useEffect(() =>{
     const getPokemon = async () =>{
       if(input){
       const resp = await fetch(`https://pokeapi.co/api/v2/pokemon/${input}`);
       const data = await resp.json();
-      setPokemon(data);
-      }else{
-        const resp = await fetch(`https://pokeapi.co/api/v2/pokemon/pikachu`);
-        const data = await resp.json();
-        setPokemon(data);
+      setPokemon([data, ...pokemon]);
       }
     }
     getPokemon();
   }, [input]);
   
   
-  const addPokemon = (e) => {
+  const addPokemon = async (e) => {
     e.preventDefault();
-    const input = e.target.pokeName.value;
-    setInput(input);
+    setInput(e.target.pokeName.value.toLowerCase());
     e.target.reset();
   } 
 
   return (
-    <fieldset className={"lista-pokemon"}>
-      <legend>List</legend>
-      <form onSubmit={addPokemon}>
-        <input name="pokeName" placeholder={"Introduce pokemon..."} />
-        
-        <button type="submit" >Enviar</button>
-      </form>
-      {pokemon!=={}?<Card value={pokemon}/>:""}
-    </fieldset>
+    <section className={"lista-comp"}>
+      <section className={"lista-input"}>
+        <form onSubmit={addPokemon}>
+          <input type="text" name="pokeName" placeholder={"Introduce pokemon..."} />
+          <button type="submit" >Enviar</button>
+        </form>
+      </section>
+      <section className={"lista-cards"}>
+        {pokemon!==[]?pokemon.map(pokemon=><Card value={pokemon} key={crypto.randomUUID()}/>):""}
+      </section>
+    </section>
     );
 }
 

@@ -4,11 +4,9 @@ import ListaPokemon from "./ListaPokemon";
 
 class Main extends Component {
   render() {
-    return <fieldset className={"main"}>
-      <legend>Main</legend>
-      Main
+    return <section className={"main"}>
       <ListaPokemon />
-    </fieldset>;
+    </section>;
   }
 }
 
