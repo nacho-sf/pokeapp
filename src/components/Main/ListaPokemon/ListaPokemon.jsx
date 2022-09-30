@@ -29,7 +29,7 @@ const ListaPokemon = () => {
       <section className={"lista-input"}>
         <form onSubmit={addPokemon}>
           <input type="text" name="pokeName" placeholder={"Introduce pokemon..."} />
-          <button type="submit" >Enviar</button>
+          <button type= "submit">Enviar</button>
         </form>
       </section>
       <section className={"lista-cards"}>
