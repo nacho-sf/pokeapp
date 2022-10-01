@@ -18,18 +18,16 @@ const ListaPokemon = () => {
   }, [input]);
   
   
-  const addPokemon = async (e) => {
+  const handleInputChange = (e) => {
     e.preventDefault();
-    setInput(e.target.pokeName.value.toLowerCase());
-    e.target.reset();
+    setInput(e.target.value.toLowerCase());
   } 
 
   return (
     <section className={"lista-comp"}>
       <section className={"lista-input"}>
-        <form onSubmit={addPokemon}>
-          <input type="text" name="pokeName" placeholder={"Introduce pokemon..."} />
-          <button type= "submit">Enviar</button>
+        <form onChange={handleInputChange}>
+          <input type="text" name="pokeName" placeholder={"Introduce pokemon..."}  />
         </form>
       </section>
       <section className={"lista-cards"}>
