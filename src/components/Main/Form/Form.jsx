@@ -1,9 +1,7 @@
-import React, { Component } from "react";
+import React from "react";
 
-class Form extends Component {
-  render() {
+const Form = () => {
     return <div>Form</div>;
-  }
 }
 
 export default Form;

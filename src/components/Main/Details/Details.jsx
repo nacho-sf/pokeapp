@@ -1,9 +1,7 @@
-import React, { Component } from "react";
+import React from "react";
 
-class Details extends Component {
-  render() {
-    return <div>Details</div>;
-  }
+const Details = () => {
+  return <div>Details</div>;
 }
 
 export default Details;
