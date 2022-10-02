@@ -1,11 +1,17 @@
 import React, { useEffect, useState } from 'react';
+import { useDebouncedCallback } from 'use-debounce';
 import Card from '../ListaPokemon/Card';
+
 
 const ListaPokemon = () => {
 
   const [pokemon, setPokemon] = useState([]);
   const [input, setInput] = useState("");
+  const debounced = useDebouncedCallback((input) => {
+    setInput(input);
+  }, 1500);
 
+  
   useEffect(() =>{
     const getPokemon = async () =>{
       if(input){
@@ -18,15 +24,11 @@ const ListaPokemon = () => {
   }, [input]);
   
   
-  const handleInputChange = (e) => {
-    e.preventDefault();
-    setInput(e.target.value.toLowerCase());
-  } 
 
   return (
     <section className={"lista-comp"}>
       <section className={"lista-input"}>
-        <form onChange={handleInputChange}>
+        <form onChange={(e) => debounced(e.target.value.toLowerCase())}>
           <input type="text" name="pokeName" placeholder={"Introduce pokemon..."}  />
         </form>
       </section>
