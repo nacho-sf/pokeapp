@@ -9,7 +9,7 @@ import '../src/styles/styles.scss';
 function App() {
 
   return (
-    <div className="app-box">
+    <div className="App">
       <BrowserRouter>
         <Header />
         <Main />

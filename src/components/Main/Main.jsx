@@ -8,7 +8,7 @@ import NotFound from "./NotFound"
 
 const Main = () => {
 
-  return <main>
+  return <main className="main-box">
     <Routes>
       <Route element={<Home/>} path={"/"}/>        
       <Route element={<ListaPokemon/>} path={"/search"}/>
