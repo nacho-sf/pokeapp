@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 function Card(props) {
+  
   const [poke,setPoke] = useState(props.value)
 
   const { name, base_experience } = poke;

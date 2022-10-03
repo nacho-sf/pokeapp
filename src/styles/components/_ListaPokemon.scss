@@ -2,15 +2,29 @@
 @import '../utils/mixins.scss';
 
 .lista-comp{
-    background-color: rgb(196, 242, 182)
+    
 }
 
 .lista-input{
-    background-color: rgb(23, 63, 50);
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items:center;
+    align-content: center;
 
     &>form{
+        
+
         &>input{
+            width: 180px;
+            height: 30px;
             margin: 10px;
+            border-radius: 4px;
+            border: solid 1px gray;
+            outline: none;
+            font-size: large;
+            color: gray;
         }
     }
 

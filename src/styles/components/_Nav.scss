@@ -1,18 +1,20 @@
-@import url('http://fonts.cdnfonts.com/css/pokemon-hollow');
+@import url('http://fonts.cdnfonts.com/css/to-japan');
 
 .nav-box{
-    font-family: 'Pokemon Hollow', sans-serif;
-    font-weight: 800;
-    font-size: large;
-    padding-right: 120px;
+    font-family: 'To Japan', sans-serif;
+    font-weight: 400;
+    font-size:medium;
+    
     &>a{
         
         padding: 0 30px 0 30px;
         text-decoration: none;
         color: rgb(253, 211, 0);
+        transition: color 0.5s;
 
         &:hover{
-            color: rgb(150, 150, 150);
+            color: white;
+            
         }
     }
 }
